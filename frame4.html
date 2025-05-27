@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mac-style Window with Border</title>
+<style>
+  html, body {
+    margin: 0; padding: 0; height: 100%;
+    background: #f0f0f5;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mac-window {
+    width: 90vw;  /* 90% viewport width */
+    height: 90vh; /* 90% viewport height */
+    max-width: 1200px; /* optional max width */
+    max-height: 900px;  /* optional max height */
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    user-select: none;  
+  }
+
+  .title-bar {
+    height: 30px; /* taller for easier drag */
+    background: #f5f5f7;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    gap: 12px;
+    -webkit-app-region: drag;
+    flex-shrink: 0;
+  }
+
+  .traffic-light {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    box-shadow: inset 0 1px 2px rgba(255,255,255,0.8);
+    user-select: none;
+  }
+  .close { background: #ff5f57; }
+  .minimize { background: #febc2e; }
+  .maximize { background: #28c840; }
+
+  .content {
+    padding: 20px;
+    overflow-y: auto;
+    flex-grow: 1;
+    font-size: 15px;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    user-select: text;
+  }
+
+  /* Scrollbar for webkit */
+  .content::-webkit-scrollbar {
+    width: 10px;
+  }
+  .content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 5px;
+  }
+  .content::-webkit-scrollbar-thumb {
+    background: #bbb;
+    border-radius: 5px;
+  }
+  .content::-webkit-scrollbar-thumb:hover {
+    background: #999;
+  }
+</style>
+</head>
+<body>
+
+<div class="mac-window" role="main" aria-label="Mac style window">
+  <div class="title-bar" aria-label="Window title bar with traffic lights">
+    <div class="traffic-light close" aria-label="Close button"></div>
+    <div class="traffic-light minimize" aria-label="Minimize button"></div>
+    <div class="traffic-light maximize" aria-label="Maximize button"></div>
+  </div>
+  <div class="content" tabindex="0" aria-label="Scrollable text content area">
+    <!-- Your text here -->
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius nisi at orci pretium, in finibus elit sodales. Integer accumsan, leo nec bibendum suscipit, sapien urna laoreet nisl, in bibendum enim leo non risus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed vulputate nisl quis velit efficitur, a bibendum erat cursus. Suspendisse potenti. Integer et erat vitae augue luctus aliquet. Nulla facilisi.
+
+Curabitur rhoncus, risus non tincidunt cursus, odio elit maximus risus, vel luctus erat nulla ut erat. Proin faucibus augue a nisi fringilla, a laoreet ligula pretium. Fusce sed lacus porttitor, consectetur nulla nec, rhoncus arcu. Donec vitae elit eu metus dignissim mollis. Quisque vitae semper nulla, vel facilisis sapien. Pellentesque ultricies diam nec purus cursus, sed convallis libero viverra. Donec efficitur, nunc et volutpat bibendum, orci massa convallis sapien, in efficitur purus turpis et nisl. Nullam tincidunt lorem nec justo congue rhoncus.
+
+Praesent consectetur purus ac ex viverra blandit. Maecenas dignissim orci ut est dignissim, at pretium odio consectetur. Phasellus hendrerit, purus at sodales lobortis, erat risus lacinia libero, vitae rutrum arcu nisl et metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Curabitur a sapien in libero dictum facilisis. Vivamus scelerisque nulla vel nisl dignissim pretium. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque dolore nisi iusto voluptates quasi fugit exercitationem? Error laudantium minima aspernatur laborum in magni pariatur eius labore deleniti expedita! Vitae eius ullam nam, culpa nostrum doloremque magnam eos quos, explicabo optio cumque vel fuga. Non quasi, aspernatur suscipit facilis sit velit. Dolore aliquid laudantium dolorum possimus ducimus, necessitatibus dolor sit? Adipisci atque error quidem maiores distinctio recusandae repudiandae in, sequi ab voluptatibus cum harum voluptatum maxime praesentium omnis voluptatem eius blanditiis, veniam reprehenderit sunt deleniti id aspernatur voluptas! Consequuntur obcaecati dolor eos debitis quos molestias vero ut animi, corrupti fuga reiciendis maxime dignissimos quod. Neque assumenda nesciunt, magnam sunt eveniet modi distinctio deleniti dolor consequatur, ad incidunt quisquam dolorem! Dignissimos illum repudiandae exercitationem qui. Eum laborum illo ad earum rerum sapiente animi. Officia quisquam provident voluptate, ipsam minima doloribus, ex nam at placeat recusandae rerum beatae laudantium dicta. Id quod sed officia et officiis, ratione fugiat dolor quisquam iste neque quo dolorum sequi optio sit aliquam eos harum rem itaque soluta error. Fugiat nam beatae dicta corporis minus ipsum eligendi numquam voluptates, rem laboriosam assumenda temporibus voluptate molestiae rerum, quos enim laborum voluptatibus officiis. Tempora ut inventore animi modi nulla quisquam consequuntur, quas sequi voluptas provident veniam similique et perferendis reiciendis ipsam quasi obcaecati nobis cum, sed cumque sint ducimus totam! Sunt quo animi nostrum dicta ab, vel molestiae excepturi deserunt illum vero. Sint ut earum autem architecto aperiam, optio blanditiis ipsum alias a assumenda, odit perspiciatis quasi quibusdam, doloribus cum debitis aspernatur praesentium expedita quaerat. Consequatur nostrum itaque dolores quaerat aspernatur repudiandae neque facilis in expedita tenetur minus ea tempora ab, ex asperiores veritatis molestias deleniti a. Cupiditate ratione pariatur, deserunt quasi possimus ipsam rerum blanditiis non consectetur, reprehenderit corrupti nostrum iste recusandae vel, voluptas maiores. Quia, aut. Id perspiciatis, assumenda laboriosam incidunt dicta corporis illo eum ullam architecto nesciunt facere sit nam vel dolore animi necessitatibus! Vitae veniam, commodi praesentium sapiente exercitationem maiores est quis aut deleniti rem, repellat obcaecati? Autem nobis voluptate incidunt quidem animi culpa quaerat veritatis. At ipsam accusamus, veniam, modi provident dolores, ea quibusdam porro exercitationem rem expedita explicabo corporis a ab? Architecto rem mollitia vel earum nihil voluptatem vero eos praesentium fugiat. Ex illum distinctio aliquid quae maxime consequatur dolorum eligendi doloremque, atque natus modi expedita possimus id doloribus adipisci? Sequi reprehenderit deleniti nostrum, tempore praesentium vero ratione perspiciatis iste expedita, libero delectus recusandae cum, voluptas mollitia esse! Neque tenetur vel explicabo excepturi nihil in alias illo sunt cupiditate eos ullam sint quis officiis odit fuga quae corrupti, error voluptas aliquam ratione ab earum labore aut! Quas ab ea molestias, rem culpa doloremque illum necessitatibus minima soluta placeat at id, natus libero et. Placeat, quam. Aspernatur perspiciatis dignissimos exercitationem maxime nihil in itaque, ex eaque voluptate neque quos ratione dicta voluptas qui repudiandae. Repellendus velit et perspiciatis, recusandae rem ipsa expedita quisquam ipsum corporis aspernatur maxime sed assumenda optio architecto minima dolor. Fugiat ex vero iure quaerat reprehenderit inventore, sunt veniam iste quisquam sed, voluptate dignissimos eius illum? Magni nisi consequatur ipsam! Ea odio reprehenderit quo. Atque laudantium aut molestias corporis earum quam harum expedita nam odit fuga, sequi dolorem numquam magnam, blanditiis beatae rerum ipsa assumenda at hic ut officiis provident! Delectus nulla beatae facere dignissimos ullam nisi architecto, praesentium laudantium quae voluptates obcaecati sunt? Facere omnis voluptatem neque deserunt, hic libero quis quia eveniet quisquam ducimus dignissimos, saepe quidem, recusandae sit. Delectus vitae deleniti non dolorem necessitatibus qui labore. Expedita nostrum fuga rerum ducimus dolore quaerat quisquam vel modi eaque natus quidem, corrupti distinctio nihil deserunt animi maiores voluptatem, dicta optio aspernatur cumque. Hic id libero ea labore dolores totam debitis error, doloremque soluta. Aliquid expedita nihil ullam. Maxime accusamus est veniam hic asperiores commodi consequuntur vero, doloremque veritatis laborum vitae placeat vel perferendis sequi voluptas. Facilis amet quod mollitia dignissimos rerum magnam, a voluptatem fuga placeat porro ratione fugiat quia explicabo obcaecati sequi dicta iure alias? Ullam, rem. Esse ratione optio, quidem, quam voluptas quae harum totam consectetur adipisci architecto sunt sint omnis. Distinctio maxime consequuntur impedit, obcaecati ipsa illum fugiat soluta dolores hic cumque asperiores vero odio, neque nihil error temporibus magni dignissimos praesentium. Neque, veritatis maxime. Ab pariatur sunt officiis facere omnis architecto ipsam aut fugiat, cumque possimus nobis quos vero hic dolores itaque, eius excepturi recusandae dolorem expedita nemo corporis minus ut. Nulla consectetur sint dicta? In fugiat eos hic, amet quibusdam asperiores reiciendis. Eligendi dolorem pariatur consequatur. Eaque nihil reprehenderit sed eveniet ducimus corporis. Facilis molestias ullam sequi beatae dolore reprehenderit, quam accusantium rem cumque ipsa eos, eveniet exercitationem in, et neque veritatis porro saepe aliquam! Magni laudantium similique fugiat. Autem, provident! Possimus, modi vel eveniet facilis neque autem earum necessitatibus repudiandae explicabo delectus. Repellat quam deserunt veniam, asperiores hic cum! Quidem, exercitationem odit atque consectetur quaerat accusamus quae at in iste qui tenetur fuga maxime nostrum porro. Iure corporis doloremque magni fugiat? Temporibus dicta suscipit doloremque adipisci ipsum harum perspiciatis, sed ea ab blanditiis nobis minus, vel aliquid repudiandae non doloribus qui voluptate cupiditate officiis esse ex laborum dolor! Dicta facere, praesentium numquam sunt maxime beatae blanditiis quasi ea soluta expedita consequatur ducimus? Aliquid, nobis repudiandae cumque ex et rem sint libero, sunt tempore consectetur at! Eveniet aperiam quaerat dolore? Consequuntur omnis sapiente aperiam blanditiis, repudiandae obcaecati quis molestias debitis sit porro repellat voluptates consequatur, id aliquid numquam sunt? Ex velit laudantium a odit odio! Animi saepe, sapiente, enim aspernatur suscipit placeat odit, impedit et blanditiis cupiditate rerum? Unde enim nobis corporis quo voluptatem numquam odit voluptate vitae expedita adipisci tempore aut optio rerum omnis, inventore sed et repellat reiciendis ipsum quisquam. Distinctio neque cum debitis error, quas saepe quisquam ea iusto fugiat consequuntur exercitationem accusamus dicta laborum alias eligendi pariatur temporibus, deserunt iste quos enim sit corrupti, harum tempore? Voluptates quas esse itaque ducimus beatae, eos excepturi nam minima, laborum accusamus, inventore doloribus. Fugiat hic accusantium incidunt aliquam corrupti, cum sapiente repudiandae, neque iure deserunt saepe error minus perspiciatis suscipit. Maxime sequi sapiente unde illo.
+</div>
+</div>
+
+</body>
+</html>
